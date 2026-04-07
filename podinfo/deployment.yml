@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podinfo
+  labels:
+    app: podinfo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: podinfo
+  template:
+    metadata:
+      labels:
+        app: podinfo
+    spec:
+      containers:
+      - name: podinfod
+        image: ghcr.io/stefanprodan/podinfo:6.3.5
+        ports:
+        - containerPort: 9898
+        env:
+        - name: PODINFO_UI_COLOR
+          # value: "#345995" 
+          value: "#fb3640" 
+        - name: PODINFO_UI_MESSAGE
+          value: "Bem-vindo à Demo de GitOps!"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: podinfo
+spec:
+  type: NodePort
+  ports:
+    - port: 9898
+      targetPort: 9898
+      nodePort: 30001
+  selector:
+    app: podinfo
