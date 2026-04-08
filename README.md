@@ -57,6 +57,14 @@ Se a aplicação foi criada com sincronismo automático, após finalizar a cria�
 
 ![App sincronizado](./docs/app_sincronizado.png)
 
+Para acessar a aplicação, precisamos fazer um forward do serviço
+```bash
+kubectl port-forward svc/podinfo -n dev 9898:9898
+```
+Agora, acesse http://localhost:9898
+
+![App azul](./docs/app_azul.png)
+
 # Demostração
 
 Para ver o sincronismo na prática, mude a cor de fundo
@@ -90,6 +98,8 @@ spec:
 ```
 
 Após a mudança, faça o commit e push. Observe a UI do ArgoCD e veja o sincronismo acontecendo.
+
+:warning: Após o commit, o `port-forward` da aplicação vai ser cancelado. Para acessar a aplicação é preciso executar o comando novamente
 
 TODO: Adicionar vídeo
 
