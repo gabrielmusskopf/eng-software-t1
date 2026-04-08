@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
       - name: podinfod
-        # image: ghcr.io/stefanprodan/podinfo:6.3.5
-        image: ghcr.io/stefanprodan/podinfo:xxx # Versão inexistente para simular falha
+        image: ghcr.io/stefanprodan/podinfo:6.3.5
         ports:
         - containerPort: 9898
         env:
