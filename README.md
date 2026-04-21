@@ -2,7 +2,7 @@
 
 Esse repositório visa demonstrar a utilização das práticas de GitOps. Para isso, iremos configurar um cluster local com ArgoCD, e adicionar uma aplicação existente nesse repositório.
 
-# Quickstart
+## Quickstart
 
 Para seguir essa demo, é preciso ter instalado [k3d](https://k3d.io/stable/) e [kubectl](http://kubernetes.io/pt-br/docs/tasks/tools/#kubectl).
 
@@ -65,7 +65,7 @@ Agora, acesse http://localhost:9898
 
 ![App azul](./docs/app_azul.png)
 
-# Demostração
+## Demostração
 
 Para ver o sincronismo na prática, mude a cor de fundo
 ```yaml
@@ -101,11 +101,12 @@ Após a mudança, faça o commit e push. Observe a UI do ArgoCD e veja o sincron
 
 :warning: Após o commit, o `port-forward` da aplicação vai ser cancelado. Para acessar a aplicação é preciso executar o comando novamente
 
-TODO: Adicionar vídeo
-
-# Encerrando
+## Encerrando
 
 Para encerrar, basta remover o cluster
 ```bash
 k3d cluster delete es-demo
 ```
+
+## Demonstração em vídeo
+[![Demonstração](https://i9.ytimg.com/vi_webp/RCxLAXtCY2s/mq2.webp?sqp=CMimns8G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEMgSShyMA8=&rs=AOn4CLA95MhHNiquh_sC_yKRUonSP2QSpQ)](https://youtu.be/RCxLAXtCY2s)
