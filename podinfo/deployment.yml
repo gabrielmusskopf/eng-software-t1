@@ -21,8 +21,8 @@ spec:
         - containerPort: 9898
         env:
         - name: PODINFO_UI_COLOR
-          value: "#345995" 
-          # value: "#fb3640" 
+          # value: "#345995" 
+          value: "#fb3640" 
         - name: PODINFO_UI_MESSAGE
           value: "Bem-vindo à Demo de GitOps!"
 ---
